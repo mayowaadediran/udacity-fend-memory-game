@@ -1,7 +1,7 @@
 /*
  * Create a list that holds all of your cards
  */
-let cards = ['fa-diamond', 'fa-diamond', 'fa-paper-plane-o', 'fa-paper-plane-o', 'fa-anchor', 'fa-anchor', 'fa-bolt', 'fa-bolt', 'fa-cube', 'fa-cube', 'fa-anchor', 'fa-anchor', 'fa-leaf', 'fa-leaf', 'fa-bicycle', 'fa-bicycle'];
+let cards = ['fa-diamond', 'fa-diamond', 'fa-paper-plane-o', 'fa-paper-plane-o', 'fa-anchor', 'fa-anchor', 'fa-bolt', 'fa-bolt', 'fa-cube', 'fa-cube', 'fa-bomb', 'fa-bomb', 'fa-leaf', 'fa-leaf', 'fa-bicycle', 'fa-bicycle'];
 
 //variable to define card ul 
 cardDeck = document.querySelector(".deck"); 
@@ -71,6 +71,9 @@ function cardOpened() {
     if (openCards[0].innerHTML === openCards[1].innerHTML) {
       matched();
     }
+    else {
+      unmatched();
+    }
   }
 
 };
@@ -79,8 +82,16 @@ function matched() {
   openCards[0].classList.add("match");
   openCards[1].classList.add("match");
   openCards = [];
-}
+};
 
+function unmatched() {
+  setTimeout(() => {
+    openCards[0].classList.remove("show", "open");
+    openCards[1].classList.remove("show", "open");
+    openCards = [];
+  }, 1100);
+  
+}
 
 
 
