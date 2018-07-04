@@ -3,14 +3,14 @@
  */
 let cards = ['fa-diamond', 'fa-diamond', 'fa-paper-plane-o', 'fa-paper-plane-o', 'fa-anchor', 'fa-anchor', 'fa-bolt', 'fa-bolt', 'fa-cube', 'fa-cube', 'fa-anchor', 'fa-anchor', 'fa-leaf', 'fa-leaf', 'fa-bicycle', 'fa-bicycle'];
 
+//variable to define card ul 
+cardDeck = document.querySelector(".deck"); 
 
+//variable to hold shuffled cards 
+let shuffledCards = shuffle(cards);
 
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
+//start game on page load
+document.body.onload = startGame();
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -26,6 +26,29 @@ function shuffle(array) {
 
     return array;
 }
+
+/*
+ * Display the cards on the page
+ *   - shuffle the list of cards using the provided "shuffle" method below
+ *   - loop through each card and create its HTML
+ *   - add each card's HTML to the page
+ */
+
+//function to create shuffled card element
+function createCard() {
+  shuffledCards.forEach(card => {
+    let cardHolder = document.createElement("li");
+    cardHolder.classList.add("card");
+    cardHolder.innerHTML = `<i class="fa ${card}"><i>`;
+    cardDeck.appendChild(cardHolder);
+  });
+}
+
+
+function startGame() {
+  createCard();
+}
+
 
 
 /*
