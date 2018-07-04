@@ -9,8 +9,15 @@ cardDeck = document.querySelector(".deck");
 //variable to hold shuffled cards 
 let shuffledCards = shuffle(cards);
 
+
+
+
+
+
+
 //start game on page load
 document.body.onload = startGame();
+
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -27,6 +34,12 @@ function shuffle(array) {
     return array;
 }
 
+function startGame() {
+  cardDeck.innerHTML = "";
+  createCard();
+}
+
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -41,13 +54,17 @@ function createCard() {
     cardHolder.classList.add("card");
     cardHolder.innerHTML = `<i class="fa ${card}"><i>`;
     cardDeck.appendChild(cardHolder);
+    cardHolder.addEventListener("click", displayCard);
   });
 }
 
-
-function startGame() {
-  createCard();
+function displayCard() {
+  this.classList.add("show", "open");
 }
+
+
+
+
 
 
 
