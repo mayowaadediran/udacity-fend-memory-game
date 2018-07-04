@@ -69,13 +69,17 @@ function cardOpened() {
   openCards.push(this);
   if (openCards.length === 2) {
     if (openCards[0].innerHTML === openCards[1].innerHTML) {
-      openCards[0].classList.add("match");
-      openCards[1].classList.add("match");
+      matched();
     }
   }
-  
-}
 
+};
+
+function matched() {
+  openCards[0].classList.add("match");
+  openCards[1].classList.add("match");
+  openCards = [];
+}
 
 
 
