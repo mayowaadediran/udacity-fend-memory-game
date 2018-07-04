@@ -89,12 +89,19 @@ function unmatched() {
     openCards[0].classList.remove("show", "open");
     openCards[1].classList.remove("show", "open");
     openCards = [];
+    enable();
   }, 1100);
 };
 
 function disable() {
   Array.prototype.forEach.call(cardList, cardElement => {
     cardElement.classList.add("disabled");
+  });
+};
+
+function enable() {
+  Array.prototype.forEach.call(cardList, cardElement => {
+    cardElement.classList.remove("disabled");
   });
 };
 
