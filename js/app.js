@@ -4,10 +4,13 @@
 let cards = ['fa-diamond', 'fa-diamond', 'fa-paper-plane-o', 'fa-paper-plane-o', 'fa-anchor', 'fa-anchor', 'fa-bolt', 'fa-bolt', 'fa-cube', 'fa-cube', 'fa-bomb', 'fa-bomb', 'fa-leaf', 'fa-leaf', 'fa-bicycle', 'fa-bicycle'];
 
 //variable to define card ul 
-cardDeck = document.querySelector(".deck"); 
+let cardDeck = document.querySelector(".deck"); 
 
 //array to hold opened cards 
 openCards = []; 
+
+
+let cardList = document.getElementsByClassName("card"); 
 
 //variable to hold shuffled cards 
 let shuffledCards = shuffle(cards);
@@ -56,16 +59,13 @@ function createCard() {
     cardHolder.classList.add("card");
     cardHolder.innerHTML = `<i class="fa ${card}"></i>`;
     cardDeck.appendChild(cardHolder);
-    cardHolder.addEventListener("click", displayCard);
     cardHolder.addEventListener("click", cardOpened);
   });
 }
 
-function displayCard() {
-  this.classList.add("show", "open");
-}
 
 function cardOpened() {
+  this.classList.add("show", "open");
   openCards.push(this);
   if (openCards.length === 2) {
     if (openCards[0].innerHTML === openCards[1].innerHTML) {
@@ -75,7 +75,6 @@ function cardOpened() {
       unmatched();
     }
   }
-
 };
 
 function matched() {
@@ -85,14 +84,19 @@ function matched() {
 };
 
 function unmatched() {
+  disable();
   setTimeout(() => {
     openCards[0].classList.remove("show", "open");
     openCards[1].classList.remove("show", "open");
     openCards = [];
   }, 1100);
-  
-}
+};
 
+function disable() {
+  Array.prototype.forEach.call(cardList, cardElement => {
+    cardElement.classList.add("disabled");
+  });
+};
 
 
 /*
