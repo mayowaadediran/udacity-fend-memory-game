@@ -6,9 +6,11 @@ let cards = ['fa-diamond', 'fa-diamond', 'fa-paper-plane-o', 'fa-paper-plane-o',
 //variable to define card ul 
 cardDeck = document.querySelector(".deck"); 
 
+//array to hold opened cards 
+openCards = []; 
+
 //variable to hold shuffled cards 
 let shuffledCards = shuffle(cards);
-
 
 
 
@@ -52,9 +54,10 @@ function createCard() {
   shuffledCards.forEach(card => {
     let cardHolder = document.createElement("li");
     cardHolder.classList.add("card");
-    cardHolder.innerHTML = `<i class="fa ${card}"><i>`;
+    cardHolder.innerHTML = `<i class="fa ${card}"></i>`;
     cardDeck.appendChild(cardHolder);
     cardHolder.addEventListener("click", displayCard);
+    cardHolder.addEventListener("click", cardOpened);
   });
 }
 
@@ -62,7 +65,16 @@ function displayCard() {
   this.classList.add("show", "open");
 }
 
-
+function cardOpened() {
+  openCards.push(this);
+  if (openCards.length === 2) {
+    if (openCards[0].innerHTML === openCards[1].innerHTML) {
+      openCards[0].classList.add("match");
+      openCards[1].classList.add("match");
+    }
+  }
+  
+}
 
 
 
