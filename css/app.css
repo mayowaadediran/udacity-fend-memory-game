@@ -116,3 +116,8 @@ h1 {
 .fa-star {
   color: gold;
 }
+
+.timer {
+  margin-left: 50px;
+  display: inline-block;
+}
