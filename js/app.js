@@ -9,16 +9,20 @@ let cardDeck = document.querySelector(".deck");
 //array to hold opened cards 
 openCards = []; 
 
-
+//variable to hold card li html 
 let cardList = document.getElementsByClassName("card"); 
+
+//
+let moves = 0;
+
+let movesCount = document.querySelector(".moves");
+
+//
+let stars = document.getElementsByClassName("fa-star");
+
 
 //variable to hold shuffled cards 
 let shuffledCards = shuffle(cards);
-
-
-
-
-
 
 //start game on page load
 document.body.onload = startGame();
@@ -65,7 +69,8 @@ function createCard() {
 
 
 function cardOpened() {
-  this.classList.add("show", "open");
+  this.classList.add("show", "open", "disabled");
+  movesCounter();
   openCards.push(this);
   if (openCards.length === 2) {
     if (openCards[0].innerHTML === openCards[1].innerHTML) {
@@ -78,8 +83,8 @@ function cardOpened() {
 };
 
 function matched() {
-  openCards[0].classList.add("match");
-  openCards[1].classList.add("match");
+  openCards[0].classList.add("match", "disabled");
+  openCards[1].classList.add("match", "disabled");
   openCards = [];
 };
 
@@ -103,6 +108,18 @@ function enable() {
   Array.prototype.forEach.call(cardList, cardElement => {
     cardElement.classList.remove("disabled");
   });
+};
+
+function movesCounter() {
+  moves++ ; 
+  movesCount.innerHTML = moves;
+ if (moves >= 10 && moves <= 15) {
+   stars[2].style.color = "black";
+ } else if (moves >= 16 && moves <= 21) {
+   stars[1].style.color = "black";
+ } else if (moves > 22) {
+   stars[0].style.color = "black";
+ }
 };
 
 
