@@ -84,6 +84,15 @@ function createCard() {
 
 function startTimer() {
   
+  setInterval(function(){
+    timer.innerHTML = `${mins} mins ${secs} secs`;
+    secs++;
+    if (secs == 60) {
+      mins++;
+      secs = 0;
+    }
+  }, 1000);
+  
 };
 
 function cardOpened() {
@@ -130,6 +139,9 @@ function enable() {
 
 function movesCounter() {
   moves++ ; 
+  if (moves == 1) {
+    startTimer();
+  }
   movesCount.innerHTML = moves;
  if (moves >= 10 && moves <= 15) {
    stars[2].style.color = "black";
