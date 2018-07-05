@@ -21,6 +21,12 @@ let movesCount = document.querySelector(".moves");
 //variable to define stars
 let stars = document.getElementsByClassName("fa-star");
 
+//
+let timer = document.querySelector(".timer");
+
+let mins = 0;
+
+let secs = 0;
 
 //variable to hold shuffled cards 
 let shuffledCards = shuffle(cards);
@@ -47,10 +53,12 @@ function shuffle(array) {
 function startGame() {
   cardDeck.innerHTML = "";
   createCard();
+  mins = 0;
+  secs = 0;
+  timer.innerHTML = `${mins} mins ${secs} secs`;
 }
 
 function refresh() {
-
   setTimeout(function () {
     location.reload()
   }, 100);
@@ -74,6 +82,9 @@ function createCard() {
   });
 }
 
+function startTimer() {
+  
+};
 
 function cardOpened() {
   this.classList.add("show", "open", "disabled");
