@@ -12,12 +12,13 @@ openCards = [];
 //variable to hold card li html 
 let cardList = document.getElementsByClassName("card"); 
 
-//
+//variable to count moves
 let moves = 0;
 
+//variable to hold moves counter on htlm
 let movesCount = document.querySelector(".moves");
 
-//
+//variable to define stars
 let stars = document.getElementsByClassName("fa-star");
 
 
@@ -48,6 +49,12 @@ function startGame() {
   createCard();
 }
 
+function refresh() {
+
+  setTimeout(function () {
+    location.reload()
+  }, 100);
+}
 
 /*
  * Display the cards on the page
@@ -119,7 +126,7 @@ function movesCounter() {
    stars[1].style.color = "black";
  } else if (moves > 22) {
    stars[0].style.color = "black";
- }
+ };
 };
 
 
