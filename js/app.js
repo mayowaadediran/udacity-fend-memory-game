@@ -28,11 +28,16 @@ let mins = 0;
 
 let secs = 0;
 
+//
+let matchedCards = document.getElementsByClassName("match");
+
 //variable to hold shuffled cards 
 let shuffledCards = shuffle(cards);
 
 //start game on page load
 document.body.onload = startGame();
+
+
 
 
 // Shuffle function from http://stackoverflow.com/a/2450976
@@ -107,6 +112,7 @@ function cardOpened() {
       unmatched();
     }
   }
+  endGame();
 };
 
 function matched() {
@@ -144,12 +150,20 @@ function movesCounter() {
   }
   movesCount.innerHTML = moves;
  if (moves >= 10 && moves <= 15) {
-   stars[2].style.color = "black";
+   stars[2].remove();
  } else if (moves >= 16 && moves <= 21) {
-   stars[1].style.color = "black";
+   stars[1].remove();
  } else if (moves > 22) {
-   stars[0].style.color = "black";
+   stars[0].remove();
  };
+};
+
+function endGame() {
+  if (matchedCards.length == 16) {
+    setTimeout(function () {
+      ;
+    }, 1000);
+  }
 };
 
 
