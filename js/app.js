@@ -153,12 +153,10 @@ function movesCounter() {
   }
 
   movesCount.innerHTML = moves;
- if (moves >= 10 && moves <= 15) {
-   stars[2]
- } else if (moves >= 16 && moves <= 21) {
-   stars[1]
- } else if (moves > 22) {
-   stars[0]
+ if (moves >= 10 && moves < 20) {
+   stars[2].style.visibility = "collapse";
+ } else if (moves >= 21 && moves <= 30) {
+   stars[1].style.visibility = "collapse";
  };
 };
 
@@ -166,7 +164,8 @@ function endGame() {
   if (matchedCards.length == 16) {
     setTimeout(function () {
       modalMessage.style.visibility = "visible";
-      clearInterval(timerInterval);     
+      clearInterval(timerInterval);
+     
     }, 1000);
   }
 };
