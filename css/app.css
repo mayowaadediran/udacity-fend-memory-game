@@ -19,6 +19,7 @@ body {
 body {
     background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
+    position: relative;
 }
 
 .container {
@@ -120,4 +121,34 @@ h1 {
 .timer {
   margin-left: 50px;
   display: inline-block;
+}
+
+/* 
+* Styles for congratulations modal
+*/
+
+#modal {
+   
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-message {
+  border-radius: 4px;
+  background: #2e3d49;
+  width: 50%;
+  position: absolute;
+  top: 220px;
+  left: 0; 
+  right: 0; 
+  margin-left: auto;
+  margin-right: auto;
 }
