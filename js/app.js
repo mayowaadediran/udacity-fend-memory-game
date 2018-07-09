@@ -162,10 +162,16 @@ function movesCounter() {
 
 function endGame() {
   if (matchedCards.length == 16) {
+
+    timeRating = timer.innerHTML; 
+    starRating = document.querySelector(".stars").innerHTML;
+
     setTimeout(function () {
       modalMessage.style.visibility = "visible";
       clearInterval(timerInterval);
-     
+      document.getElementById("moves-rating").innerHTML = moves;
+      document.getElementById("time-rating").innerHTML = timeRating;
+      document.getElementById("star-rating").innerHTML = starRating;
     }, 1000);
   }
 };
