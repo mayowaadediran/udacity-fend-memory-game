@@ -31,6 +31,8 @@ let secs = 0;
 //
 let matchedCards = document.getElementsByClassName("match");
 
+let modalMessage = document.getElementById("modal");
+
 //variable to hold shuffled cards 
 let shuffledCards = shuffle(cards);
 
@@ -87,17 +89,18 @@ function createCard() {
   });
 }
 
+
+var timerInterval;
 function startTimer() {
-  
-  setInterval(function(){
+    timerInterval = setInterval(timerCount, 1000);
+    function timerCount() {
     timer.innerHTML = `${mins} mins ${secs} secs`;
     secs++;
     if (secs == 60) {
       mins++;
       secs = 0;
-    }
-  }, 1000);
-  
+    };
+  };
 };
 
 function cardOpened() {
@@ -148,20 +151,22 @@ function movesCounter() {
   if (moves == 1) {
     startTimer();
   }
+
   movesCount.innerHTML = moves;
  if (moves >= 10 && moves <= 15) {
-   stars[2].remove();
+   stars[2]
  } else if (moves >= 16 && moves <= 21) {
-   stars[1].remove();
+   stars[1]
  } else if (moves > 22) {
-   stars[0].remove();
+   stars[0]
  };
 };
 
 function endGame() {
   if (matchedCards.length == 16) {
     setTimeout(function () {
-      ;
+      modalMessage.style.visibility = "visible";
+      clearInterval(timerInterval);     
     }, 1000);
   }
 };
