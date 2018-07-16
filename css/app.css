@@ -128,7 +128,7 @@ h1 {
 */
 
 #modal {
-   visibility: visible;
+   visibility: hidden;
 }
 
 .overlay {
