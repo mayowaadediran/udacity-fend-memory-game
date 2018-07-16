@@ -180,7 +180,7 @@ function endGame() {
 
 function closeModal() {
     modalMessage.style.visibility = "hidden";
-    disabled();
+    disable();
 };
 
 
