@@ -143,7 +143,7 @@ h1 {
 
 .modal-message {
   border-radius: 4px;
-  background-color: #2e3d49;
+  background-color: #ffffff;
   width: 50%;
   position: absolute;
   top: 220px;
@@ -151,6 +151,8 @@ h1 {
   left: 0;
   right: 0;
   text-align: center;
+  color: #2e3d49;
+  padding: 50px;
 }
 
 #star-rating {
