@@ -175,3 +175,21 @@ h1 {
 #time-rating {
   margin-right: 20px;
 }
+
+.play-again-btn {
+  background: #02ccba;
+  padding: 10px 30px;
+  border: none;
+  color: #ffffff;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.play-again-btn:focus {
+  outline: none;
+}
+
+.play-again-btn:hover {
+  background: #02b3a4de;
+}
