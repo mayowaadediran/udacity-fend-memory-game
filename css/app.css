@@ -128,7 +128,7 @@ h1 {
 */
 
 #modal {
-   
+   visibility: visible;
 }
 
 .overlay {
@@ -143,12 +143,33 @@ h1 {
 
 .modal-message {
   border-radius: 4px;
-  background: #2e3d49;
+  background-color: #2e3d49;
   width: 50%;
   position: absolute;
   top: 220px;
-  left: 0; 
-  right: 0; 
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+#star-rating {
+  display: inline-block;
+  padding: 0; 
+  margin: 0;
+}
+
+#star-rating li {
+  list-style: none;
+  display: inline-block;
+}
+
+.score p {
+  display: inline-block;
+  margin-right: 3px;
+}
+
+#moves-rating,
+#time-rating {
+  margin-right: 20px;
 }
