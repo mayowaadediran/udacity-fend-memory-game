@@ -163,8 +163,8 @@ function movesCounter() {
 function endGame() {
   if (matchedCards.length == 16) {
 
-    timeRating = timer.innerHTML; 
-    starRating = document.querySelector(".stars").innerHTML;
+    var timeRating = timer.innerHTML; 
+    var starRating = document.querySelector(".stars").innerHTML;
 
     setTimeout(function () {
       modalMessage.style.visibility = "visible";
@@ -174,6 +174,13 @@ function endGame() {
       document.getElementById("star-rating").innerHTML = starRating;
     }, 1000);
   }
+  closeModalButton = document.querySelector(".close-modal");
+  closeModalButton.addEventListener("click", closeModal); 
+};
+
+function closeModal() {
+    modalMessage.style.visibility = "hidden";
+    disabled();
 };
 
 
