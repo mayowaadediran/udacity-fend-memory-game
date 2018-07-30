@@ -18,8 +18,8 @@ To load up the game and start playing, open the following link your browser http
 * If the cards do not match, they will be flip back to hide their symbols.
 * The game ends when you have matched all the cards on the deck.
 
-#Game Functionalities
-The timer and moves start counting when the first card is clicked. 
-Star ratings reduced as your moves increases. Try to match the cards with less moves to have better ratings.
-The game can be restarted anytime by clicking the restart button on the right-hand corner of the board. 
-When the game ends, a congratulatory message will be displayed, showing your time, number of moves and star rating. 
+# Game Functionalities
+* The timer and moves start counting when the first card is clicked. 
+* Star ratings reduced as your moves increases. Try to match the cards with less moves to have better ratings.
+* The game can be restarted anytime by clicking the restart button on the right-hand corner of the board. 
+* When the game ends, a congratulatory message will be displayed, showing your time, number of moves and star rating. 
