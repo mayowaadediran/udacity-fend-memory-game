@@ -39,7 +39,7 @@ h1 {
  */
 
 .deck {
-    width: 80%;
+    width: 70%;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 32px;
     border-radius: 10px;
@@ -67,7 +67,7 @@ h1 {
 }
 
 .deck .card.open {
-    transform: rotateY(360deg);
+    transform: rotateY(180deg);
     background: #02b3e4;
     cursor: default;
 }
@@ -82,10 +82,17 @@ h1 {
     font-size: 1rem;
 }
 
+.deck .card.unmatched {
+    background-color: red;
+}
+
 .deck .card.disabled {
 	pointer-events: none;
 	opacity: 0.9;
 }
+
+/** Animation Keyframes **/ 
+
 
 /*
  * Styles for the Score Panel
