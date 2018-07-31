@@ -126,9 +126,11 @@ function matched() {
 
 function unmatched() {
   disable();
+  openCards[0].classList.add("unmatched");
+  openCards[1].classList.add("unmatched");
   setTimeout(() => {
-    openCards[0].classList.remove("show", "open");
-    openCards[1].classList.remove("show", "open");
+    openCards[0].classList.remove("show", "open", "unmatched");
+    openCards[1].classList.remove("show", "open", "unmatched");
     openCards = [];
     enable();
   }, 1100);
