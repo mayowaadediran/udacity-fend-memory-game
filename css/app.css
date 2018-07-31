@@ -198,6 +198,8 @@ h1 {
   border-radius: 3px;
   font-size: 12px;
   cursor: pointer;
+  transition-property: background;
+  transition-duration: 0.5s;
 }
 
 .play-again-btn:focus {
